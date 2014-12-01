@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>jQuery Boilerplate</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/jquery.rate.js"></script>
+
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	
+
+	<body>
+		<section>
+			<header>
+				<h1>Rating Plugin</h1>
+				<div class="subheader">
+					Rating system
+					Do something else when item is removed
+				</div>
+			</header>
+				<div class="rating" data-rating="3" >
+					<span class="star">*</span>
+					<span class="star">*</span>
+					<span class="star">*</span>
+					<span class="star">*</span>
+					<span class="star">*</span>
+				</div>
+				<br>			
+				<div class="rating" data-rating="1" >
+					<span class="star">*</span>
+					<span class="star">*</span>
+					<span class="star">*</span>
+					<span class="star">*</span>
+					<span class="star">*</span>
+				</div>
+				<br>
+				<div class="rating" data-rating="5" >
+					<span class="star">*</span>
+					<span class="star">*</span>
+					<span class="star">*</span>
+					<span class="star">*</span>
+					<span class="star">*</span>
+				</div>
+				<br>
+		</section>
+
+		<script>
+
+			// Call the plugin when dom ready
+			$(document).ready(function() {
+
+				$('.rating').rate( {
+					onComplete: function () {
+						// return the plugin instance.. 
+						// so you have full acces to its methods and properties
+						console.log("updated, new rate", this.rate);
+						console.log("current element", this.element);
+						console.log("current items", this.$items);
+						// etc...
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

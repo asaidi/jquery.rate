@@ -6,7 +6,8 @@
 
 ;
 (function($, window, document, undefined) {
-
+	"use strict";
+	
 	var pluginName = 'rate',
 		defaults = {
 			onComplete: function (obj) {},
